@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Малога Олексій Андрійович — Вчитель-стажист</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f4f8;
+      color: #333;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #1a1a4e 0%, #2d4a8a 60%, #1a6b5a 100%);
+      padding: 2.5rem 2rem 2rem;
+      text-align: center;
+      position: relative;
+    }
+    .emblem {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid rgba(255,255,255,0.5);
+      margin: 0 auto 1rem;
+      display: block;
+      background: rgba(255,255,255,0.15);
+    }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      color: #cde;
+      font-size: 13px;
+      padding: 4px 16px;
+      border-radius: 20px;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.5px;
+    }
+    .hero h1 {
+      color: white;
+      font-size: 26px;
+      font-weight: bold;
+      margin-bottom: 0.4rem;
+    }
+    .hero p {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+    }
+
+    /* NAV */
+    nav {
+      background: #1a1a4e;
+      display: flex;
+      justify-content: center;
+    }
+    nav a {
+      color: rgba(255,255,255,0.7);
+      font-size: 14px;
+      padding: 14px 24px;
+      text-decoration: none;
+      border-bottom: 3px solid transparent;
+      transition: all 0.2s;
+    }
+    nav a:hover {
+      color: white;
+      border-bottom-color: #5dcaa5;
+    }
+
+    /* MAIN */
+    main {
+      max-width: 860px;
+      margin: 2rem auto 5rem;
+      padding: 0 1rem;
+    }
+
+    /* SECTIONS */
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .section-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #1a1a4e;
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f0f4f8;
+    }
+    .section-title i {
+      font-size: 22px;
+      color: #1a6b5a;
+    }
+
+    /* ABOUT */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 160px 1fr;
+      gap: 1.5rem;
+      align-items: start;
+    }
+    .about-grid img {
+      width: 160px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 1px solid #e0e0e0;
+    }
+    .about-grid p {
+      font-size: 15px;
+      line-height: 1.8;
+      color: #555;
+    }
+
+    /* SUBJECTS */
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+    .subject-card {
+      background: #f7f9fc;
+      border: 1px solid #e8edf5;
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .subject-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+    }
+    .subject-card i {
+      font-size: 32px;
+      color: #2d4a8a;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .subject-card span {
+      font-size: 14px;
+      color: #444;
+      font-weight: bold;
+    }
+
+    /* CONTACTS */
+    .contacts {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 14px 16px;
+      background: #f7f9fc;
+      border-radius: 10px;
+      border: 1px solid #e8edf5;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s;
+    }
+    .contact-row:hover {
+      background: #eef2fa;
+    }
+    .contact-row i {
+      font-size: 22px;
+      color: #2d4a8a;
+      min-width: 24px;
+    }
+    .contact-row span {
+      font-size: 15px;
+      color: #333;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a1a4e;
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      text-align: center;
+      padding: 16px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    /* FADE-IN ANIMATION */
+    .section {
+      animation: fadeUp 0.5s ease both;
+    }
+    .section:nth-child(2) { animation-delay: 0.1s; }
+    .section:nth-child(3) { animation-delay: 0.2s; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="emblem.png" alt="Емблема" class="emblem" />
+  <img src="photo.jpg" alt="Малога Олексій Андрійович" class="avatar" />
+  <div class="hero-badge">Вчитель-стажист</div>
+  <h1>Малога Олексій Андрійович</h1>
+  <p>Історія України &nbsp;·&nbsp; Всесвітня історія &nbsp;·&nbsp; Громадянська освіта</p>
+</header>
+
+<nav>
+  <a href="#about">Про мене</a>
+  <a href="#subjects">Предмети</a>
+  <a href="#contacts">Контакти</a>
+</nav>
+
+<main>
+
+  <section class="section" id="about">
+    <div class="section-title">
+      <i class="ti ti-user"></i> Про мене
+    </div>
+    <div class="about-grid">
+      <img src="photo.jpg" alt="Малога Олексій Андрійович" />
+      <p>Я — Малога Олексій Андрійович, вчитель-стажист. Моя мета — зацікавити учнів історією та суспільствознавством, допомогти їм краще розуміти минуле і сьогодення.<br><br>
+      Викладаю з душею і прагненням передати учням любов до рідної історії та критичне мислення.</p>
+    </div>
+  </section>
+
+  <section class="section" id="subjects">
+    <div class="section-title">
+      <i class="ti ti-book"></i> Предмети
+    </div>
+    <div class="subjects-grid">
+      <div class="subject-card">
+        <i class="ti ti-map"></i>
+        <span>Історія України</span>
+      </div>
+      <div class="subject-card">
+        <i class="ti ti-world"></i>
+        <span>Всесвітня історія</span>
+      </div>
+      <div class="subject-card">
+        <i class="ti ti-gavel"></i>
+        <span>Громадянська освіта</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contacts">
+    <div class="section-title">
+      <i class="ti ti-address-book"></i> Контакти
+    </div>
+    <div class="contacts">
+      <a href="mailto:malogaalexey@gmail.com" class="contact-row">
+        <i class="ti ti-mail"></i>
+        <span>malogaalexey@gmail.com</span>
+      </a>
+      <a href="tel:+380507041095" class="contact-row">
+        <i class="ti ti-phone"></i>
+        <span>+380 50 704 10 95</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  &copy; 2026 Малога Олексій Андрійович
+</footer>
+
+</body>
+</html>
